@@ -26,18 +26,18 @@ cd OPENAI-API-KEY
 python -m venv .venv
 ```
 
-Activate the environment and install dependencies:
+Activate the environment and install the two packages used by the app:
 
 ```powershell
 # Windows PowerShell
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+python -m pip install openai python-dotenv
 ```
 
 ```bash
 # macOS / Linux
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install openai python-dotenv
 ```
 
 ## Configure and run
@@ -65,7 +65,6 @@ python app.py
 ```text
 .
 ├── app.py         # Sends a prompt and prints the model response
-├── requirements.txt
 ├── .env.example   # Safe environment-variable template
 ├── .gitignore     # Excludes local secrets and environments
 └── README.md
