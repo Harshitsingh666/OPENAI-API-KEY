@@ -1,33 +1,80 @@
-# OpenAI API Lab 🤖
+<div align="center">
 
-A beginner-friendly Python project demonstrating how to connect a Python application to the OpenAI API using the official OpenAI Python SDK.
+# OpenAI API Lab
 
-## 📌 Project Overview
+**A minimal Python example for sending a prompt to the OpenAI API and printing the response.**
 
-This project demonstrates how to:
+![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
+![OpenAI API](https://img.shields.io/badge/OpenAI-API-412991?logo=openai&logoColor=white)
 
-- Set up a Python environment for an API-based application
-- Install the OpenAI Python SDK
-- Securely store an API key using environment variables
-- Send a prompt to an OpenAI model
-- Receive an AI-generated response
-- Display the response in the terminal
-- Experiment with different prompts
+</div>
 
-## 🛠️ Technologies Used
+## How it works
 
-- Python
-- OpenAI API
-- OpenAI Python SDK
-- python-dotenv
-- VS Code
+```mermaid
+flowchart LR
+    A[Prompt in app.py] --> B[OpenAI Python SDK]
+    B --> C[OpenAI API]
+    C --> D[Response in terminal]
+```
 
-## 📁 Project Structure
+## Quick start
+
+```bash
+git clone https://github.com/Harshitsingh666/OPENAI-API-KEY.git
+cd OPENAI-API-KEY
+python -m venv .venv
+```
+
+Activate the environment and install dependencies:
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+## Configure and run
+
+Create an API key from the [OpenAI dashboard](https://platform.openai.com/api-keys). Copy the safe template and add the key locally:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Edit `.env` so it contains:
+
+```dotenv
+OPENAI_API_KEY=your_api_key
+```
+
+Then run:
+
+```bash
+python app.py
+```
+
+## Project files
 
 ```text
-openai-apii/
-│
-├── app.py
-├── .env
-├── .gitignore
+.
+├── app.py         # Sends a prompt and prints the model response
+├── requirements.txt
+├── .env.example   # Safe environment-variable template
+├── .gitignore     # Excludes local secrets and environments
 └── README.md
+```
+
+## Security
+
+Keep API keys out of source code, browser code, screenshots, and commits. If a key was committed previously, revoke it and create a replacement; deleting the latest copy does not erase Git history.
+
+## License
+
+No license file is currently listed. Add one before granting reuse permissions.
